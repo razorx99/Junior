@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Caner angular";
+}
+
+
+
+<div ng-app="benimuygulamam" ng-controller="kitaplar">
+    <div ng-controller="kitaplar as benimuygulamam">
+
+        <center>
+        <table>
+            <tr>
+   
+                <th>Sıra</th>
+                <th>Kitap Adı</th>
+                <th>Fiyat</th> 
+                <th>Açıklama</th>
+                <th>İşlem</th>
+            </tr>
+
+				
+            <tr ng-repeat="item in kitaplar">
+
+                <td>{{$index+1}}</td>
+                <td>{{item.isim+1}}</td>
+                <td>{{item.fiyat}}</td>
+                <td>{{item.aciklama}}</td>
+                <td> <button ng-click="urunSil($index)" class="btn btn-warning">Sil</button></td>
+
+            </tr>
+ 
+        </table>
+        <br>
+        <br>
+
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Kayıt ekle
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Kitap Ekle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                       
+                        Kitap İsmi:<br>
+                        <input ng-model="isim"><br><br>
+                        Kitap Fiyatı:<br>
+                        <input ng-model="fiyat"><br><br>
+                        Kitap Açıklaması:<br>
+                        <input type="text" ng-model="aciklama" name="lastname">
+
+
+
+                    </div>
+                    <div class="modal-footer">
+        
+                        <button type="button" class="btn btn-secondary" ng-click="onClickButton()" data-dismiss="modal">Kayıt Et</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
